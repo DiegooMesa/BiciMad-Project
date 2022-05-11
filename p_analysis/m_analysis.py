@@ -96,7 +96,3 @@ def select_question_maker ():
     if inp == "":
         brk = True
     return (inp, brk)
-
-
-
-    
