@@ -16,28 +16,3 @@ url_bikes = './data/CSV_imports/bicimad.csv'                                    
 raw_dframes = macq.acquire(url_embas, url_bikes)                                      #Acquire in order to get both databases and turn them into dframes
 selec_dframes = mw.dframe_col_selector(raw_dframes[0], raw_dframes[1])                #Dframes columns are selected
 mr.user_prompt(selec_dframes, variables)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
