@@ -21,7 +21,6 @@ def dframe_col_selector (emba_dframe, bike_dframe):
     for i in range(len(bike_dframe['geometry_coordinates'])):
         LONGITUDE.append(float(bike_dframe['geometry_coordinates'][i].split(",")[0].replace("[", "")))
         LATITUDE.append(float(bike_dframe['geometry_coordinates'][i].split(",")[1].replace("]", "")))   
-
     bike_dframe = bike_dframe[['id', 'name', 'address']]
     bike_dframe['LATITUDE'] = LATITUDE
     bike_dframe['LONGITUDE'] = LONGITUDE
@@ -34,7 +33,6 @@ def dframe_chopper (long, lat, dataframe, i):
     long_low = long
     lat_up = lat
     lat_low = lat
-    
     while check == False:
         dframe = dataframe
         i += 1
@@ -46,10 +44,8 @@ def dframe_chopper (long, lat, dataframe, i):
         dframe = dframe[dframe.LONGITUDE <= long_up]
         dframe = dframe[dframe.LATITUDE >= lat_low]
         dframe = dframe[dframe.LATITUDE <= lat_up]
-        
         if len(dframe) != 0:
             check = True
-        
     return (dframe, i)
 
 
